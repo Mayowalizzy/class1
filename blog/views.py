@@ -52,7 +52,7 @@ def create(request):
         author = request.user
         title = request.POST.get('title')
         category = request.POST.get('category')
-        context = request.POST.get('content')
+        context = request.POST.get('context')
         blog_create = Blog.objects.create(title=title, category=category, context=context, author=author)
         blog_create.save()
         return redirect(reverse("home"))
