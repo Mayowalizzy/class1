@@ -10,7 +10,7 @@ from django.urls import reverse
 def home(request):
     posts = Blog.objects.all()
     context = {"posts": posts}
-    return render(request, 'blog\home.html', context)
+    return render(request, 'blog/home.html', context)
 
 def signup(request):
     if request.method == 'POST':
@@ -20,7 +20,7 @@ def signup(request):
         new_user = User(username=username, email=email, password=password)
         new_user.save()
         return redirect("/")
-    return render(request, 'blog\signup.html')
+    return render(request, 'blog/signup.html')
 
 def login(request):
     if request.user.is_authenticated:
@@ -39,7 +39,7 @@ def login(request):
         auth.login(request, user)
         return redirect('/')
         # print(username , password)
-    return render(request, 'blog\login.html')
+    return render(request, 'blog/login.html')
 
 def logout(request):
     print(request.user)
@@ -56,7 +56,7 @@ def create(request):
         blog_create = Blog.objects.create(title=title, category=category, context=context, author=author)
         blog_create.save()
         return redirect(reverse("home"))
-    return render(request, 'blog\create.html')
+    return render(request, 'blog/create.html')
 
 def read(request,id):
     try:
