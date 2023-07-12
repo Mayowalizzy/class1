@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CREATE A BLOG POST</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="">Title</label>
+        <input type="text" name="title">
+        <br><br>
+        <label for="">Category</label>
+        <input type="text" name="category">
+        <br><br>
+        <label for="">Content</label>
+        <br>
+      <textarea name="create" id="" cols="30" rows="10"></textarea>
+        <br><br>
+        <button>Create blog</button>
+    </form>
+</body>
+</html>

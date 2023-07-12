@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="{{ post.image.url }}" alt="{{post.title}} image">
+    </div>
+    <h3>{{post.title}}</h3>
+    <p>{{post.context}}</p>
+
+    <span>{{post.date}}</span>
+    <span>{{post.author}}</span><br>
+    {% if post.author == user %}
+    <a href="{% url 'edit' post.id %}"> <button>edit</button></a>
+    <a href="{% url 'delete' post.id %}"> <button>delete</button></a>
+     {% endif %}
+</body>
+</html>
