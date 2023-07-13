@@ -96,13 +96,14 @@ def edit(request,id):
 
         messages.info(request,"post is edited successfully")
         return redirect(reverse("home"))
-    return render(request,"app/edit.html",context)
+    return render(request, 'blog/edit.html', context)
 
 
 def client_error (request, exception):
     return render(request,"blog/error.html")
 
 def server_error(request):
+
     return render(request,"blog/server_error.html")
 
 
