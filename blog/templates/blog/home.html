@@ -34,7 +34,11 @@
    {% if user.is_authenticated %}
    <a href="{% url 'create' %}"><button>create blog</button></a>
    {% endif %}
+   <a href="{% url 'contact' %}">Contact me</a>
    <br><br>
+   {% for message in messages %}
+   <p>{{ message }}</p>
+   {% endfor %}
    {% for post in posts %}
    <div class="all">
     <h3 class="blog_title">{{ post.title }}</h3>
